@@ -1,4 +1,4 @@
-FROM jboss/keycloak:3.4.1.Final
+FROM jboss/keycloak
 
 USER root
 RUN yum install -y iproute
@@ -8,8 +8,6 @@ ADD cli/* /opt/jboss/keycloak/cli/
 RUN cd /opt/jboss/keycloak \
   && bin/jboss-cli.sh --file=cli/aws.cli \
   && rm -rf /opt/jboss/keycloak/standalone/configuration/standalone_xml_history
-
-RUN sed -i -e "/.*<\/dependencies>$/i \ \ \ \ \ \ \ \ <module name=\"com.mysql.jdbc\"\/>" /opt/jboss/keycloak/modules/system/layers/base/org/jgroups/main/module.xml
 
 ADD docker-entrypoint-aws.sh /opt/jboss/
 
