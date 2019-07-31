@@ -10,7 +10,6 @@
 /subsystem=jgroups/stack=tcp/protocol=pbcast.STABLE:remove
 /subsystem=jgroups/stack=tcp/protocol=pbcast.GMS:remove
 /subsystem=jgroups/stack=tcp/protocol=MFC:remove
-/subsystem=jgroups/stack=tcp/protocol=FRAG2:remove
 /subsystem=jgroups/stack=tcp/protocol=MERGE3:add
 /subsystem=jgroups/stack=tcp/protocol=FD_SOCK:add
 /subsystem=jgroups/stack=tcp/protocol=FD_ALL:add
@@ -20,7 +19,6 @@
 /subsystem=jgroups/stack=tcp/protocol=pbcast.STABLE:add
 /subsystem=jgroups/stack=tcp/protocol=pbcast.GMS:add
 /subsystem=jgroups/stack=tcp/protocol=MFC:add
-/subsystem=jgroups/stack=tcp/protocol=FRAG2:add
 /socket-binding-group=standard-sockets/socket-binding=jgroups-tcp/:write-attribute(name=interface,value=public)
 # Debug logging
 /subsystem=logging/logger=org.jgroups:add
