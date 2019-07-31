@@ -1,4 +1,5 @@
 #!/bin/sh
+set -x
 
 # Debug
 ip -f inet -o addr show
